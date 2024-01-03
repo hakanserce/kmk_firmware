@@ -2,7 +2,6 @@ import board
 
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
-from kmk.extensions.media_keys import MediaKeys
 
 rows = [1, 2, 5, 7, 16, 21, 22, 26]
 cols = [0, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 28]
@@ -12,6 +11,7 @@ def coord(row, col):
 
 class KMKKeyboard(_KMKKeyboard):
     
+    # TODO: remove duplication here. Generate row_pins and col_pins, from rows/cols
     row_pins = [
         board.GP1,
         board.GP2,
@@ -51,6 +51,3 @@ class KMKKeyboard(_KMKKeyboard):
         coord(7,18), coord(16,28), coord(16,8), coord(16,9), coord(16,10), coord(22,10), coord(22,11), coord(16,11), coord(16,12), coord(16,6), coord(22,13), coord(26,18), coord(21,20), coord(26,14), coord(26,15), coord(26,19), coord(26,20), 
         coord(5,3), coord(7,17), coord(21,0), coord(21,14), coord(22,0), coord(26,17), coord(22,6), coord(16,3), coord(22,20), coord(22,14), coord(22,15), coord(21,15), coord(21,19)
     ]
-
-    extensions = [MediaKeys()]
-
